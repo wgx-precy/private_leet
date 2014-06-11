@@ -2,6 +2,8 @@
 /*Given numTows, generate the first numRows of Pascal's triangle.*/
 //Wed 4:45pm
 vector<vector<int> > generate(int numRows) {
+    vector<vector<int> >result;
+    vector<int> tmp;
     for(int i = 0; i < numRows; i++) {
 	tmp.push_back(1);
 	for(int j = 1; j < i; j++) {
