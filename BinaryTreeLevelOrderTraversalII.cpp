@@ -11,19 +11,19 @@ vector<vector<int> > levelOrderBottom(TreeNode *root) {
     tracker.push(root);
     while(flag||!tracker.empty()) {
         if(tracker.empty()){
-	    if(tmp_tracker.empty()) flag = false;
-	    result.push_back(tmp);
-	    tmp.clear();
-	    while(!tmp_tracker.empty()){
-		tracker.push(tmp_tracker.top());
-		tmp_tracker.pop();
+	        if(tmp_tracker.empty()) flag = false;
+	        result.push_back(tmp);
+	        tmp.clear();
+	        while(!tmp_tracker.empty()){
+		        tracker.push(tmp_tracker.top());
+		        tmp_tracker.pop();
+	        }
+	    } else {
+	        tmp.push_back(tracker.top()->val);
+	        if(tracker.top()->left) {tmp_tracker.push(tracker.top()->left);flag = true;}
+	        if(tracker.top()->right) {tmp_trakcer.push(tracker.top()->right);flag = true;}
+	        tracker.pop();
 	    }
-	} else {
-	    tmp.push_back(tracker.top()->val);
-	    if(tracker.top()->left) {tmp_tracker.push(tracker.top()->left);flag = true;}
-	    if(tracker.top()->right) {tmp_trakcer.push(tracker.top()->right);flag = true;}
-	    tracker.pop();
-	}
     }
     reverse(result.begin(),result.end());
     return result;
