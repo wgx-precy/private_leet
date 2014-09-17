@@ -1,5 +1,5 @@
 //Path Sum II
-/*Given a binary tree and a sum, find all toot-to-leaf paths where each path's sum equals the given sum. */
+/*Given a binary tree and a sum, find all root-to-leaf paths where each path's sum equals the given sum. */
 //Wed 12:59 pm
 vector<vector<int> > pathSum(TreeNode *root, int sum) {
     vector<vector<int> >result;
