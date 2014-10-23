@@ -18,13 +18,13 @@ public:
             }
             i++;
         }
+        i = 0;
         if(is_empty) return true;
-        while(!str.empty()) {
-            if(str.front() != reverse.top()) {
-                return false;
-            } else {
-                str.pop_back();
+        while(!reverse.empty()) {
+            if(str[i] == reverse.top()||(str[i]-32) == reverse.top() || (str[i++] + 32) == reverse.top()) {
                 reverse.pop();
+            } else {
+                return false;
             }
         }
         return true;
